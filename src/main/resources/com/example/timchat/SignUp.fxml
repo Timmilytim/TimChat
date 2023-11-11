@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+<?import javafx.scene.control.DatePicker?>
+<GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+          vgap="3"  style="-fx-background-image: url(background.jpg);"
+          fx:controller="com.example.timchat.HelloController">
+
+    <Label text=" TIMCHAT    " GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <font>
+            <Font size="32" name="Arial Bold"/>
+        </font>
+
+        <graphic>
+            <ImageView>
+                <Image url ="@/toolbarButtonGraphics/general/History24.gif"/>
+            </ImageView>
+        </graphic>
+
+    </Label>
+
+    <!--    FIRST NAME     -->
+    <Label text="First Name" GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <font>
+            <Font size="14" name="Arial Bold"/>
+        </font>
+    </Label>
+    <TextField fx:id="fname" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+
+    <!--    LAST NAME      -->
+    <Label text="Last Name" GridPane.rowIndex="6" GridPane.columnIndex="0" >
+        <font>
+            <Font size="14" name="Arial Bold"/>
+        </font>
+    </Label>
+    <TextField fx:id="lname" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+
+    <!--    EMAIL      -->
+    <Label text="Email" GridPane.rowIndex="8" GridPane.columnIndex="0" >
+        <font>
+            <Font size="14" name="Arial Bold"/>
+        </font>
+    </Label>
+    <TextField fx:id="email" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+
+
+    <!--    PASSWORD-->
+    <Label text="Password" GridPane.rowIndex="10" GridPane.columnIndex="0" >
+        <font>
+            <Font size="14" name="Arial Bold"/>
+        </font>
+    </Label>
+    <PasswordField fx:id="userpassword" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+
+    <!--    CONFIRM PASSWORD    -->
+    <Label text="Confirm Password" GridPane.rowIndex="12" GridPane.columnIndex="0" >
+        <font>
+            <Font size="14" name="Arial Bold"/>
+        </font>
+    </Label>
+    <PasswordField fx:id="confirmpassword" GridPane.rowIndex="13" GridPane.columnIndex="0"/>
+    <Label fx:id="error" textFill="red" GridPane.rowIndex="14" GridPane.columnIndex="0"/>
+    <!--    GENDER  -->
+    <Label text="GENDER" GridPane.rowIndex="15" GridPane.columnIndex="0" >
+        <font>
+            <Font size="14" name="Arial Bold"/>
+        </font>
+    </Label>
+
+    <HBox GridPane.rowIndex="16" GridPane.columnIndex="0">
+        <fx:define>
+            <ToggleGroup fx:id="colorButton"/>
+        </fx:define>
+        <RadioButton toggleGroup="$colorButton" text="Male"/>
+        <RadioButton toggleGroup="$colorButton" text="Female"/>
+    </HBox>
+
+    <!--    PROGRAMMING LANGUAGES -->
+    <Label text="Programming Languages" GridPane.rowIndex="17" GridPane.columnIndex="0" >
+        <font>
+
+            <Font size="14" name="Arial Bold"/>
+        </font>
+    </Label>
+    <HBox GridPane.rowIndex="18" GridPane.columnIndex="0">
+        <VBox GridPane.rowIndex="18" GridPane.columnIndex="0">
+            <CheckBox fx:id="java" text="Java"/>
+            <CheckBox fx:id="python" text="Python"/>
+            <CheckBox fx:id="js" text="JavaScript"/>
+        </VBox>
+        <VBox GridPane.rowIndex="18" GridPane.columnIndex="1">
+            <CheckBox fx:id="kotlin" text="Kotlin"/>
+            <CheckBox fx:id="csharp" text="C#"/>
+            <CheckBox fx:id="cplus" text="C++"/>
+        </VBox>
+    </HBox>
+
+    <!--    FRAMEWORK   -->
+    <Label text="Framework" GridPane.rowIndex="19" GridPane.columnIndex="0" >
+        <font>
+            <Font size="14" name="Arial Bold"/>
+        </font>
+    </Label>
+    <ComboBox fx:id="frameworks" GridPane.rowIndex="20" GridPane.columnIndex="0" >
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value ="Spring Boot"/>
+                <String fx:value ="Flask"/>
+                <String fx:value ="Django"/>
+                <String fx:value="Node Js"/>
+                <String fx:value ="Next Js"/>
+                <String fx:value="React"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!--    SUBMIT  -->
+    <Label fx:id="error2" textFill="red" GridPane.rowIndex="21" GridPane.columnIndex="0"/>
+    <Button onMousePressed="#SignUpSubmit" text="Submit" textFill="white" style="-fx-background-color: #859837;" GridPane.rowIndex="22" GridPane.columnIndex="0" >
+        <font>
+            <Font size="14"/>
+        </font>
+    </Button>
+
+   <HBox spacing="10" GridPane.rowIndex="23" GridPane.columnIndex="0" >
+       <Label text="Already have an account?">
+           <font>
+               <Font size="14"/>
+           </font>l
+       </Label>
+
+       <Label onMousePressed="#switchToLogin" text="Login" textFill="blue">
+           <font>
+               <Font size="14"/>
+           </font>
+       </Label>
+
+   </HBox>
+
+
+</GridPane>
